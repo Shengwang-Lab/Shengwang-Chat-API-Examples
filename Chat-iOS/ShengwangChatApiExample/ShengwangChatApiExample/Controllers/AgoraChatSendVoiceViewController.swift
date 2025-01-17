@@ -67,9 +67,6 @@ class AgoraChatSendVoiceViewController: UIViewController {
         super.viewDidLoad()
         setupUI()
         setupGestures()
-        audioTools.playRecording {
-            <#code#>
-        }
     }
     
     // MARK: - UI Setup

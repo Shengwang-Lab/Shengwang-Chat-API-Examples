@@ -26,6 +26,7 @@ class LoginViewController: UIViewController {
 
     @IBAction func loginAction(_ sender: Any) {
         AgoraChatClient.shared().logout(false)
+        //token generate：https://console-pre.shengwang.cn/product/IM?tab=IMOperation
         guard let user = userField.text, let token = tokenField.text else {
             return
         }
