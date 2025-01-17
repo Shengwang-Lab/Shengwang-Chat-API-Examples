@@ -1,5 +1,5 @@
 
-# <声网即时通讯 iOS API 示例> 
+# 声网即时通讯 iOS API 示例
 
 ## 概述
 
@@ -15,7 +15,7 @@
 
 - 将 `YOUR APP ID` 替换为您的 App ID
 
-> 查看[启用和配置声网即时通讯服务](https://docs.agora.io/cn/agora-chat/enable_agora_chat?platform=iOS)了解如何启用和配置服务
+> 查看[启用和配置声网即时通讯服务](https://im.shengwang.cn/docs/sdk/ios/enable_im.html)了解如何启用和配置服务
    
 ```Swift
 //初始化 SDK
