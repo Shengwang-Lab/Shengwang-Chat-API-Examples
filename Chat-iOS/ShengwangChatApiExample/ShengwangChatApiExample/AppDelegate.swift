@@ -15,7 +15,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
-        let options = AgoraChatOptions(appId: <#App Id#><##>)
+        let options = AgoraChatOptions(appId: <#AppId#>)
         options.enableConsoleLog = true
         AgoraChatClient.shared().initializeSDK(with: options)
         return true
