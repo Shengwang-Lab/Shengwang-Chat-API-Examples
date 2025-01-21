@@ -88,9 +88,6 @@ extension MenuViewController {
     
     private func removeHeader() {
         DispatchQueue.main.async {
-            guard let del = UIApplication.shared.delegate as? AppDelegate else {
-                return
-            }
             self.functionList.tableHeaderView = nil
             NotificationCenter.default.post(name: Notification.Name("AgoraChatLogout"), object: nil)
         }
