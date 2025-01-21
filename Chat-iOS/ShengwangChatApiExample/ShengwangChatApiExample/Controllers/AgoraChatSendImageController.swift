@@ -104,10 +104,10 @@ extension AgoraChatSendImageController {
             let to = self.conversation?.conversationId ?? ""
             let message = AgoraChatMessage(conversationID: to, from: AgoraChatClient.shared().currentUsername!, to: to, body: body, ext: nil)
             
-            AgoraChatClient.shared().chatManager?.send(message, progress: nil) { msg, error in
+            AgoraChatClient.shared().chatManager?.send(message, progress: nil) { [weak self] msg, error in
                 if error == nil,let message = msg {
-                    self.messages.append(message)
-                    self.messagesList.reloadData()
+                    self?.messages.append(message)
+                    self?.messagesList.reloadData()
                 } else {
                     print("\(error?.errorDescription ?? "")")
                 }

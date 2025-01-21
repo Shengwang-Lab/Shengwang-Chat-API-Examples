@@ -96,7 +96,8 @@ extension AgoraChatSendTextViewController {
     private func sendTextMessage(_ text: String) {
         let to = self.conversation?.conversationId ?? ""
         let message = AgoraChatMessage(conversationID: to, from: AgoraChatClient.shared().currentUsername!, to: to, body: AgoraChatTextMessageBody(text: text), ext: [:])
-        AgoraChatClient.shared().chatManager?.send(message, progress: nil) { sendMessage, error in
+        AgoraChatClient.shared().chatManager?.send(message, progress: nil) { [weak self] sendMessage, error in
+            guard let self = self else { return }
             if error == nil {
                 if self.heightMap[message.messageId] ?? 0 <= 0 {
                     self.heightMap[message.messageId] = AgoraChatTextCell.contentHeight(message)+52
