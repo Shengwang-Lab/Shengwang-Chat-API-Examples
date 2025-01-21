@@ -38,7 +38,7 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
                 scene.windows.first { $0.isKeyWindow }?.rootViewController = nav
             }
         } else {
-            let nav = UINavigationController(rootViewController: LoginViewController())
+            let nav = UINavigationController(rootViewController: UIStoryboard(name: "Main", bundle: .main).instantiateViewController(withIdentifier: "LoginViewController"))
             scene.keyWindow?.rootViewController = nav
         }
     }
