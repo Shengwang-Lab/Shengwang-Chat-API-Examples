@@ -1,15 +1,21 @@
 
-# 声网即时通讯 iOS API 示例
+## 项目简介
+这是一个基于声网 Chat API 开发的 iOS 示例项目，展示了如何在 iOS 应用中集成和使用声网的即时通讯功能。
 
-## 概述
+## 功能特性
+- 实时消息收发
+- 群组聊天
+- 一对一私聊
+- 消息历史记录
+- 用户在线状态
+- 多媒体消息支持（图片、语音等）
 
-本仓库包含三个使用声网即时通讯 iOS SDK 的示例项目：
+## 环境要求
+- iOS 13.0 或更高版本
+- Xcode 14.0 或更高版本
+- CocoaPods 包管理工具
 
-1. ShengwangChatApiExample：展示如何使用 AgoraChatSDK API 构建聊天应用
-
-### ShengwangChatApiExample 项目结构
-
-1. ApiExample：展示如何初始化 SDK、登录、发送消息和加入群组。
+## 快速开始
 
 #### 如何使用自己的 AppID
 
