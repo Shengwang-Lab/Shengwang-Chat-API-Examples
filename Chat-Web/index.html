@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Shengwang Chat Examples</title>
+    <script src="bundle.js" defer></script>
+</head>
+
+<body>
+    <h2 class="left-align">Shengwang Chat Examples</h5>
+        <form id="loginForm">
+            <div class="col" style="min-width: 433px; max-width: 443px">
+                <div class="card" style="margin-top: 0px; margin-bottom: 0px;">
+                    <div class="row card-content" style="margin-bottom: 0px; margin-top: 10px;">
+                        <div class="input-field">
+                            <label>UserId</label>
+                            <input type="text" placeholder="UserId" id="userID">
+                        </div>
+                        <div class="input-field">
+                            <label>Token</label>
+                            <input type="text" placeholder="Token" id="token">
+                        </div>
+                        <div class="row">
+                            <div>
+                                <button type="button" id="login">Login</button>
+                                <button type="button" id="logout">Logout</button>
+                            </div>
+                        </div>
+                        <div class="input-field">
+                            <label>Peer userId</label>
+                            <input type="text" placeholder="Peer userId" id="peerId">
+                        </div>
+                        <div class="input-field">
+                            <label>Peer Message</label>
+                            <input type="text" placeholder="Peer message" id="peerMessage">
+                            <button type="button" id="send_peer_message">sendTextMessage</button>
+                        </div>
+                        <div class="input-field" style="position:relative">
+                            <button type="button" id="send_audio_message">SendAudioMessage</button>
+                            <div id="recordBox"
+                                style="display:none;position: absolute;left:0;bottom:0;width: 140px; height: 50px; text-align:center;line-height:50px;background:#ccc;cursor:pointer;font-weight:bold;">
+                                start recording
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div>
+                                <button type="button" id="conversationList">Get Conversation List</button>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div>
+                                <input type="text" placeholder="converationId" id="converationId">
+                                <button type="button" id="roamingMessage">Get History Messages</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </form>
+
+        <hr>
+
+        <div id="log"></div>
+</body>
+
+</html>
