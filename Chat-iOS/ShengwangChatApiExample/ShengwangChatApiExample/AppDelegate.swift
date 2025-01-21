@@ -17,6 +17,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         // Override point for customization after application launch.
         let options = AgoraChatOptions(appId: <#AppId#>)
         options.enableConsoleLog = true
+        options.isAutoLogin = false
         AgoraChatClient.shared().initializeSDK(with: options)
         return true
     }
