@@ -3,15 +3,13 @@
 这是一个基于声网 Chat API 开发的 iOS 示例项目，展示了如何在 iOS 应用中集成和使用声网的即时通讯功能。
 
 ## 功能特性
-- 实时消息收发
+- 消息收发
 - 群组聊天
 - 一对一私聊
-- 消息历史记录
-- 用户在线状态
 - 多媒体消息支持（图片、语音等）
 
 ## 环境要求
-- iOS 13.0 或更高版本
+- iOS 12.0 或更高版本
 - Xcode 14.0 或更高版本
 - CocoaPods 包管理工具
 
@@ -43,12 +41,6 @@
 
 ## 如何运行示例项目
 
-### 前提条件
-
-- Xcode 13.0+
-- 支持所有 iOS 设备
-- 平台要求：iOS 11 及以上
-
 ### 运行步骤
 
 1. 进入 **iOS** 文件夹，选择一个文件夹运行以下命令安装项目依赖：
@@ -71,13 +63,13 @@ $ pod install
 
 ## 相关资源
 
-- 查看我们的issue记录[FAQ](https://docs.agora.io/en/faq).
+- 查看我们的issue记录[FAQ](https://doc.shengwang.cn/faq/list).
 
-- 深入了解声网 SDK 示例代码库以查看更多教程 [Agora SDK Samples](https://github.com/AgoraIO) 
+- 深入了解声网 SDK 示例代码库以查看更多教程 [Shengwang SDK Samples](https://github.com/Shengwang-Lab) 
 
 - 查看声网使用案例获取更多复杂的实际应用场景 [Agora Use Case](https://github.com/AgoraIO-usecase)
 
-- 在声网开发者社区可以找到社区维护的开源项目 [Agora Community](https://github.com/AgoraIO-Community)
+- 在声网开发者社区可以找到社区维护的开源项目 [Shengwang Community](https://github.com/Shengwang-Lab)
 
 - 如果集成中遇到任何问题可以在这里提问 [Stack Overflow](https://stackoverflow.com/questions/tagged/agora.io)
 
