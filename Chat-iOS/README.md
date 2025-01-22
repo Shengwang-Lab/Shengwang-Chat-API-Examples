@@ -131,7 +131,7 @@ $ pod install
 ## 参考
 
 - [Product Overview](https://im.shengwang.cn/docs/sdk/ios/document_index.html)
-- [API Reference](https://docs.agora.io/en/agora-chat/agora_chat_overview?platform=iOS)
+- [API Reference](https://im.shengwang.cn/sdkdocs/chat1.x/ios/)
 
 ## 相关资源
 
