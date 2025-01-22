@@ -91,7 +91,7 @@ $ pod install
             if error == nil {
             
             } else {
-                assert(false, "login error:\(error?.errorDescription ?? "")")
+                printf("login error:\(error?.errorDescription ?? "")")
             }
         }
 ```
