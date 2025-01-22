@@ -73,10 +73,15 @@ If you have any problems or suggestions regarding the sample projects, feel free
 ## Reference
 
 - [Shengwang Chat SDK Product Overview](https://im.shengwang.cn/)
+- [Shengwang Chat SDK API Reference](https://im.shengwang.cn/sdkdocs/chat1.x/web/)
 
 ## Related resources
 
-- Take a look at [Shengwang Use Case](https://github.com/Shengwang-Lab/Shengwang-Chat-API-Examplese) for more complicated real use case
+- Check our [FAQ](https://doc.shengwang.cn/faq/list) to see if your issue has been recorded.
+- Dive into [Shengwang SDK Samples](https://github.com/Shengwang-Lab) to see more tutorials
+- Take a look at [Shengwang Use Case](https://github.com/AgoraIO-usecase) for more complicated real use case
+- Repositories managed by developer communities can be found at [Shengwang Community](https://github.com/Shengwang-Lab)
+- If you encounter problems during integration, feel free to ask questions in [Stack Overflow](https://stackoverflow.com/questions/tagged/agora.io)
 
 ## License
 

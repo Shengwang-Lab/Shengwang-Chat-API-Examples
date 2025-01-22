@@ -73,10 +73,19 @@ export NODE_OPTIONS=--openssl-legacy-provider
 ## 参考文档
 
 - [Shengwang Chat SDK 产品概述](https://im.shengwang.cn/)
+- [Shengwang Chat SDK API 参考](https://im.shengwang.cn/sdkdocs/chat1.x/web/)
 
 ## 相关资源
 
-- 如果你想了解更多官方示例，可以参考 [官方 SDK 示例](https://github.com/Shengwang-Lab/Shengwang-Chat-API-Examples)
+- 查看我们的 issue 记录[FAQ](https://doc.shengwang.cn/faq/list).
+
+- 深入了解声网 SDK 示例代码库以查看更多教程 [Shengwang SDK Samples](https://github.com/Shengwang-Lab)
+
+- 查看声网使用案例获取更多复杂的实际应用场景 [Agora Use Case](https://github.com/AgoraIO-usecase)
+
+- 在声网开发者社区可以找到社区维护的开源项目 [Shengwang Community](https://github.com/Shengwang-Lab)
+
+- 如果集成中遇到任何问题可以在这里提问 [Stack Overflow](https://stackoverflow.com/questions/tagged/agora.io)
 
 ## 代码许可
 
