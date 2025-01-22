@@ -26,7 +26,7 @@
    
 ```Swift
 //初始化 SDK
-        let options = AgoraChatOptions(appId: <#App Id#><##>)
+        let option = AgoraChatOptions(appId: <#App ID#>)
         options.enableConsoleLog = true
         AgoraChatClient.shared().initializeSDK(with: options)
 ```
@@ -61,13 +61,76 @@ $ pod install
     > ⚠️Xcode15编译报错 ```Sandbox: rsync.samba(47334) deny(1) file-write-create...```
 
     > 解决方法: Build Setting里搜索 ```ENABLE_USER_SCRIPT_SANDBOXING```把```User Script Sandboxing```改为```NO```
+
+### 快速开始
+> 如果低版本Xcode与cocoapods的情况可以使用快速开始集成IMSDK
+
+1. 新建一个工程命名为 `ShengwangChatApiExample`
+
+2. cd到工程文件夹下，执行`pod init`命令，然后在Podfile文件中添加以下代码：
+
+```
+  pod 'ShengwangChat_iOS'
+```
+
+3. 执行`pod install`命令，安装SDK
+
+4. 在`AppDelegate.swift`文件中引入SDK，初始化SDK
+
+```Swift
+//初始化 SDK
+        let options = AgoraChatOptions(appId: <#App ID#>)
+        options.enableConsoleLog = true
+        AgoraChatClient.shared().initializeSDK(with: options)
+```
+
+5. 在`ViewController.swift`文件中引入SDK，使用console中生成的用户以及token登录
+
+```Swift
+        AgoraChatClient.shared().login(withUsername: "userId", token: "user token") { (userId,error) in
+            if error == nil {
+            
+            } else {
+                printf("login error:\(error?.errorDescription ?? "")")
+            }
+        }
+```
+
+6. 发送消息
+
+```Swift
+        let message = AgoraChatMessage(conversationID: "receive user id", body: AgoraChatTextMessageBody(text: text), ext: [:])
+        AgoraChatClient.shared().chatManager?.send(message, progress: nil) { [weak self] sendMessage, error in
+            guard let self = self else { return }
+            if error == nil {
+                
+            } else {
+                print("\(error?.errorDescription ?? "")")
+            }
+        }
+```
+
+7. 运行项目，查看日志，发送成功后会在控制台打印发送成功的日志
+
+> 
+[0][2025/01/22 13:59:34:724]: log: level: 0, area: 1, SEND:
+{ verison : MSYNC_V1, compress_algorimth : 0, command : SYNC, encrypt_type : [ 0 ], payload : { meta : { id : 17375255747180004, to : p3, ns : CHAT, payload : { chattype : CHAT, from : p1, to : p3, contents : [ { contenttype : TEXT, text : 666 } ] } } } }
+
+[0][2025/01/22 13:59:34:724]: [Chat TCP] sendBuffer length:56
+[0][2025/01/22 13:59:34:780]: [Chat TCP] OnData length:40
+[0][2025/01/22 13:59:34:780]: log: level: 0, area: 1, RECV:
+{ verison : MSYNC_V1, command : SYNC, payload : { status : { error_code : 0 }, meta_id : 17375255747180004, server_id : 1374221063398884136, timestamp : 1737525574756 } }
+>
+
+8. 发送其他类型消息参看Example源码以及[官网文档](https://im.shengwang.cn/docs/sdk/ios/message_send_receive.html)
+
 ## 反馈
 
 如果您对示例项目有任何问题或建议，欢迎提交 issue。
 
 ## 参考
 
-- [Product Overview](https://docs.agora.io/en/agora-chat/agora_chat_get_started_ios?platform=iOS)
+- [Product Overview](https://im.shengwang.cn/docs/sdk/ios/document_index.html)
 - [API Reference](https://docs.agora.io/en/agora-chat/agora_chat_overview?platform=iOS)
 
 ## 相关资源
