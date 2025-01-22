@@ -8,9 +8,12 @@
 - 一对一私聊
 - 多媒体消息支持（图片、语音等）
 
-## 环境要求
-- iOS 12.0 或更高版本
-- Xcode 14.0 或更高版本
+## SDK 环境要求
+- iOS 11 及其以上
+
+## Example环境要求
+- iOS 15.0 或更高版本
+- Xcode 16.0 或更高版本（项目执行pod init是Xcode16）
 - CocoaPods 包管理工具
 
 ## 快速开始
@@ -51,7 +54,13 @@ $ pod install
 2. 用 Xcode 打开生成的 `ShengwangChatApiExample.xcworkspace` 文件
 3. 在 iOS 设备或模拟器上构建并运行项目
 4. 完成设置！现在您可以体验示例项目并探索声网即时通讯 SDK 的功能了
+5. 如果`pod install`失败报错 
+    > RuntimeError - `PBXGroup` attempted to initialize an object with unknown ISA `PBXFileSystemSynchronizedRootGroup` from attributes: `{"isa"=>"PBXFileSystemSynchronizedRootGroup"`，请尝试升级pod版本为1.14.3
+6. Xcode16及其以下版本打开会报错 `Adjust the project format using a compatible version of Xcode to allow it to be opened by this version of Xcode.`
+7. Build 报错rsync相关权限问题
+    > ⚠️Xcode15编译报错 ```Sandbox: rsync.samba(47334) deny(1) file-write-create...```
 
+    > 解决方法: Build Setting里搜索 ```ENABLE_USER_SCRIPT_SANDBOXING```把```User Script Sandboxing```改为```NO```
 ## 反馈
 
 如果您对示例项目有任何问题或建议，欢迎提交 issue。
