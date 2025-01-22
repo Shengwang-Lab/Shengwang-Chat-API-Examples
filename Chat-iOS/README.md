@@ -26,7 +26,7 @@
    
 ```Swift
 //初始化 SDK
-        let options = AgoraChatOptions(appId: <#App Id#><##>)
+        let option = ChatOptions(appId: <#App ID#>)
         options.enableConsoleLog = true
         AgoraChatClient.shared().initializeSDK(with: options)
 ```
