@@ -79,7 +79,7 @@ $ pod install
 
 ```Swift
 //初始化 SDK
-        let options = AgoraChatOptions(appId: <#App Id#><##>)
+        let options = AgoraChatOptions(appId: <#App ID#>)
         options.enableConsoleLog = true
         AgoraChatClient.shared().initializeSDK(with: options)
 ```
