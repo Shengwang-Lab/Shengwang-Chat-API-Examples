@@ -1,0 +1,12 @@
+{
+  "name": "entry",
+  "version": "1.0.0",
+  "description": "Please describe the basic information.",
+  "main": "",
+  "author": "",
+  "license": "",
+  "dependencies": {
+    "@shengwang/chatsdk": "file:./libs/chatsdk-1.3.2.har"
+  }
+}
+
