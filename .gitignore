@@ -1,5 +1,59 @@
+# macOS 文件
+.DS_Store
+.AppleDouble
+.LSOverride
 
-/Chat-iOS/ShengwangChatApiExample/Pods
-Chat-iOS/ShengwangChatApiExample/ShengwangChatApiExample.xcodeproj/project.xcworkspace/xcuserdata/zhujichao1.xcuserdatad/UserInterfaceState.xcuserstate
-Chat-iOS/ShengwangChatApiExample/ShengwangChatApiExample.xcworkspace/xcuserdata/zhujichao1.xcuserdatad/UserInterfaceState.xcuserstate
-Chat-iOS/ShengwangChatApiExample/ShengwangChatApiExample.xcodeproj/project.xcworkspace/xcuserdata/zhujichao1.xcuserdatad/UserInterfaceState.xcuserstate
+# Xcode
+*.pbxuser
+!default.pbxuser
+*.mode1v3
+!default.mode1v3
+*.mode2v3
+!default.mode2v3
+*.perspectivev3
+!default.perspectivev3
+xcuserdata
+*.xccheckout
+*.xcscmblueprint
+*.xcuserstate
+*.xcworkspace/xcshareddata
+*.xcworkspace/xcuserdata
+
+# 构建文件夹
+build/
+DerivedData/
+*.log
+
+# 快照
+*.xcworkspace
+!*/Podfile
+!*/Podfile.lock
+
+# CocoaPods
+Pods/
+
+# Carthage
+Carthage/Build/
+
+# Swift Package Manager
+.swiftpm
+.build/
+
+# 项目配置缓存
+.idea/
+*.swp
+*.swo
+*~
+
+# 临时文件
+*.tmp
+*.swp
+*.swo
+*.dat
+
+# 其他
+*.lock
+*.xcdebugger/
+*.ipynb_checkpoints/
+*.xcscheme
+
