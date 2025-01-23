@@ -130,8 +130,8 @@ $ pod install
 
 ## 参考
 
-- [Product Overview](https://im.shengwang.cn/docs/sdk/ios/document_index.html)
-- [API Reference](https://im.shengwang.cn/sdkdocs/chat1.x/ios/)
+- [产品简介](https://im.shengwang.cn/docs/sdk/ios/document_index.html)
+- [API参考](https://im.shengwang.cn/sdkdocs/chat1.x/ios/)
 
 ## 相关资源
 
@@ -147,4 +147,4 @@ $ pod install
 
 ## License
 
-The sample projects are under the MIT license.
+Example工程遵守MIT开源协议.
