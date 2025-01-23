@@ -25,7 +25,7 @@
 
 - 将 `APP ID` 替换为您的 App ID
 
-> 查看[启用和配置声网即时通讯服务](https://im.shengwang.cn/docs/sdk/ios/enable_im.html)了解如何启用和配置服务
+> 查看[启用和配置声网即时通讯服务](https://im.shengwang.cn/docs/sdk/flutter/enable_im.html)了解如何启用和配置服务
 
 ```dart
 //初始化 SDK
