@@ -2,129 +2,139 @@
 
 _[English](README.md) | 中文_
 
-## 简介
+# 快速开始
 
-该仓库包含了使用 Agora Chat React-Native sdk 的示例项目。
+<Toc />
 
-![main](./res/main.jpg)
+本文介绍如何极简集成即时通讯 React-Native SDK，在你的 app 中实现发送和接收单聊文本消息。
 
-##创建一个项目
+## 实现原理
 
-1.进入控制台页面[agora.io](https://console.agora.io)。 2.进入项目管理页面。 3. 创建一个名为 `quick_start_demo` 的项目。
-![图片](./res/1.png)
-![图片](./res/2.png)
-![图片](./res/3.png)
+下图展示在客户端发送和接收一对一文本消息的工作流程。
 
-##注册一个用户
+![img](res/sendandreceivemsg.png)
 
-1.进入项目配置页面。 2.进入功能项中的聊天配置页面。
-3、在运营管理项中创建用户。
-![图片](./res/4.png)
+## 前提条件
 
-## 生成用户令牌
+集成前请确认 app 的开发和运行环境满足以下要求：
 
-1.进入项目配置页面。 2.进入功能项中的聊天配置页面。 3.在基本信息项中生成临时令牌。
-![图片](./res/5.png)
+- MacOS 12 或更高版本
+- React-Native 0.66 或更高版本
+- NodeJs 18 或更高版本
 
-## 项目结构
+对于 iOS 应用：
 
-此项目使用一个单独的 app 实现了多种功能。
+- Xcode 13 或更高版本及其相关的依赖工具。
 
-| 功能                     | 位置               |
-| ------------------------ | ------------------ |
-| 发送和接收一对一文本消息 | [App.js](./App.js) |
+对于 Android 应用：
 
-## 如何运行示例项目
+- Android Studio 2021 或更高版本及其相关的依赖工具。
 
-### 前提条件
+配置开发或者运行环境如果遇到问题，请参考 [RN 官网](https://reactnative.dev/)。
 
-#### iOS
+### 其他要求
 
-- MacOS 10.15.7 or above
-- Xcode 12.4 or above, including command line tools
-- React Native 0.63.4 or later
-- NodeJs 16 or above, including npm package management tool
-- CocoaPods package management tool
-- Yarn compile and run tool
-- Watchman debugging tool
-- A physical or virtual mobile device running iOS 11.0 or later
+有效的即时通讯 IM 开发者账号和 App ID，见 [声网控制台](https://console.shengwang.cn/overview)。
 
-#### Android
+## 项目设置
 
-- MacOS 10.15.7 or above, Windows 10 or above
-- Android Studio 4.0 or above, including JDK 1.8 or above
-- React Native 0.63.4 or later
-- CocoaPods package management tool if your operating system is Macos.
-- Powershell 5.1 or above installed if your operating system is Windows.
-- NodeJs 16 or above, including npm package management tool
-- Yarn compile and run tool
-- Watchman debugging tool
-- A physical or virtual mobile device running Android 6.0 or later
+创建一个 React Native 项目并将集成进去
 
-### 运行步骤
-
-从仓库下载代码，进入 `Chat-RN/quick_start_demo` 目录。
+1. 根据开发系统和目标平台准备开发环境。
+2. 打开终端，进入需要创建项目的目录，输入命令创建 React Native 项目：
 
 ```sh
-git clone -b main git@github.com:AgoraIO/Agora-Chat-API-Examples.git
-```
-
-初始化项目
-
-```sh
+npx @react-native-community/cli init --skip-install --version 0.76 quick_start_demo
+cd quick_start_demo
+yarn set version 1.22.19
 yarn
 ```
 
-手动执行 pod（yarn 一般会自动执行）
+创建的项目名称为 `quick_start_demo`。
+
+3. 在终端命令行，输入以下命令添加依赖：
 
 ```sh
-cd ios && pod install
+yarn add react-native-shengwang-chat
 ```
 
-更新最新 SDK 包(可选)
+4. 在目标平台执行脚本
+
+Android：
+
+无。
+
+iOS：
 
 ```sh
-yarn upgrade react-native-shengwang-chat
+cd ios && pod install && cd ..
 ```
 
-编译并在 iOS 真机运行：
+## 注册即时通讯 IM 用户
 
-1. 连接苹果手机，设置为开发者模式；
-2. 打开 `quick_start_demo/ios`，使用 `xcode` 打开 `quick_start_demo.xcworkspace`；
-3. 依次点击 **Targets** > **quick_start_demo** > **Signing & Capabilities** 在签名选项下设置应用签名；
-4. 点击 `Build` 构建并运行项目。程序构建完成后，自动安装和运行，并显示应用界面。
+#### 创建用户
 
-编译并在 Android 真机运行：
+在[声网控制台](https://console.shengwang.cn/overview)按照如下步骤创建用户：
 
-1. 在 Android Studio 中打开 `quick_start_demo/android`；
-2. 连接 Android 系统手机，设置为开发者模式，并且设置 USB 可调式；
-3. 设置数据转发：在终端命令行输入 `adb reverse tcp:8081 tcp:8081`；
-4. 启动服务：执行 `package.json` 里面的命令：`"start": "react-native start"`，在终端中运行命令 `yarn start`：
+1. 展开控制台左上角下拉框，选择需要开通即时通讯 IM 服务的项目。
 
-   ```sh
-   yarn start
-   ```
+2. 点击左侧导航栏的**全部产品**。
 
-5. 程序构建完成后，自动安装和运行，并显示应用界面。
+3. 在下拉列表中找到**即时通讯 IM** 并点击。
 
-## 反馈
+4. 在**即时通讯 IM** 页面，进入**运营管理**标签页。
 
-如果你有任何问题或建议，可以通过 issue 的形式反馈。
+5. 在**用户** 页签下，点击**创建 IM 用户**。
 
-## 参考文档
+6. 在弹出的对话框中，配置用户相关参数，点击**确定**。
 
-- [Agora Chat SDK 产品概述](https://docs.agora.io/en/agora-chat/agora_chat_get_started_rn?platform=React%20Native)
-- [Agora Chat SDK API 参考](https://docs.agora.io/en/agora-chat/api-ref?platform=React%20Native)
+![img](res/user_create.png)
 
-## 相关资源
+#### 获取用户 token
 
-- 你可以先参阅[常见问题](https://docs.agora.io/cn/faq)
-- 如果你想了解更多官方示例，可以参考[官方 SDK 示例](https://github.com/AgoraIO)
-- 如果你想了解声网 SDK 在复杂场景下的应用，可以参考[官方场景案例](https://github.com/AgoraIO-usecase)
-- 如果你想了解声网的一些社区开发者维护的项目，可以查看[社区](https://github.com/AgoraIO-Community)
-- 若遇到问题需要开发者帮助，你可以到[开发者社区](https://rtcdeveloper.com/)提问
-- 如果需要售后技术支持, 你可以在[Agora Dashboard](https://dashboard.agora.io)提交工单
+创建用户后，在用户列表点击对应的用户的**操作**一栏中的**更多**，选择**查看 Token**。
 
-## 代码许可
+在弹出的对话框中，可以查看用户 Token，也可以点击**重新生成**，生成用户 token。
 
-示例项目遵守 MIT 许可证。
+![img](res/user_token.png)
+
+## 实现发送和接收单聊消息
+
+建议使用 `visual studio code` 打开文件夹 `quick_start_demo`，打开文件 `App.js`，删除全部内容，并添加[如下内容](./App.js)
+
+## 编译和运行项目
+
+现在你可以开始在目标平台创建和运行项目。
+
+编译运行 ios 设备：
+
+```sh
+yarn run ios
+```
+
+编译运行 android 设备：
+
+```sh
+yarn run android
+```
+
+运行本地服务
+
+```sh
+yarn run start
+```
+
+## 测试你的 app
+
+参考以下代码测试注册账号，登录，发送和接收消息。
+
+1. 在真机或模拟器上输入用户名和密码，点击 **注册**。
+2. 点击 **登录**。
+3. 在另一台真机或模拟器上注册和登录一个新用户。
+4. 在第一台真机或模拟器上输入第二台上的用户名，编辑消息并点击 **发送**，在第二台机器上接收消息。
+
+同时你可以在下方查看日志，检查注册，登录，发送消息是否成功。
+
+## 更多操作
+
+为了保证安全性，我们推荐使用 `username + password + token` 方式创建用户，token 在你的 app server 生成供客户端获取，当 token 过期时你需要重新获取。详见 [使用 Token 验证](/sdk/server-side/token_authentication.html)。
