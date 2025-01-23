@@ -32,14 +32,14 @@ _[English](README.md) | 中文_
 1. *将此项目克隆到本地*
 2. *使用 visual studio打开项目: Chat-Windows\windows-example.sln*
 3. *集成 ShengWang Chat Windows sdk*
-   > 下载 [ ShengWang Chat Windows SDK](https://docs.agora.io/en/sdks?platform=windows)
+   > 下载 [ ShengWang Chat Windows SDK](https://im.shengwang.cn)
 
    > 从本地目录安装nupkg(需要勾选 包括预发行版).
 
 4. *为项目添加示例代码*
 
    > 此项目只包含一个框架，没有具体实现。
-   需要添加示例代码. 参考 [ShengWang Chat Windows sdk快速开始](https://docs.agora.io/en/agora-chat/get-started/get-started-sdk?platform=windows)
+   需要添加示例代码. 参考 [ShengWang Chat Windows sdk快速开始](https://im.shengwang.cn/docs/sdk/windows/quickstart.html)
 
 5. *编译、运行和测试你的项目*
 
@@ -52,8 +52,8 @@ _[English](README.md) | 中文_
 
 ## 参考文档
 
-- [ShengWang Chat Windows SDK 产品概述](https://docs.agora.io/en/agora-chat/agora_chat_overview?platform=Windows)
-- [ShengWang ChatWindows SDK API 参考](https://api-ref.agora.io/en/chat-sdk/unity/1.x/index.html)
+- [ShengWang Chat Windows SDK 产品概述](https://im.shengwang.cn/docs/sdk/windows/document_index.html)
+- [ShengWang ChatWindows SDK API 参考](https://im.shengwang.cn/sdkdocs/chat1.x/unity/)
 
 ## 相关资源
 
@@ -62,7 +62,6 @@ _[English](README.md) | 中文_
 - 如果你想了解声网 SDK 在复杂场景下的应用，可以参考[官方场景案例](https://github.com/AgoraIO-usecase)
 - 如果你想了解声网的一些社区开发者维护的项目，可以查看[Shengwang Community](https://github.com/Shengwang-Lab)
 - 若遇到问题需要开发者帮助，你可以到[Stack Overflow](https://stackoverflow.com/questions/tagged/agora.io)提问
-- 如果需要售后技术支持, 你可以在[Agora Dashboard](https://dashboard.agora.io)提交工单
 
 ## 代码许可
 
