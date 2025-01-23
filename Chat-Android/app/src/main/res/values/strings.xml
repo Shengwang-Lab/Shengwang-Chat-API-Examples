@@ -1,0 +1,7 @@
+<resources>
+    <string name="app_name">ShengWangChatQuickstart</string>
+    <string name="app_id">your app id</string>
+    <string name="user_name">your username</string>
+    <string name="chat_token">your chat token</string>
+
+</resources>

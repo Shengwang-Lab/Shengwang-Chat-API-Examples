@@ -8,9 +8,12 @@
 - 一对一私聊
 - 多媒体消息支持（图片、语音等）
 
-## 环境要求
-- iOS 12.0 或更高版本
-- Xcode 14.0 或更高版本
+## SDK 环境要求
+- iOS 11 及其以上
+
+## Example环境要求
+- iOS 15.0 或更高版本
+- Xcode 16.0 或更高版本（项目执行pod init是Xcode16）
 - CocoaPods 包管理工具
 
 ## 快速开始
@@ -23,7 +26,7 @@
    
 ```Swift
 //初始化 SDK
-        let options = AgoraChatOptions(appId: <#App Id#><##>)
+        let option = AgoraChatOptions(appId: <#App ID#>)
         options.enableConsoleLog = true
         AgoraChatClient.shared().initializeSDK(with: options)
 ```
@@ -51,6 +54,75 @@ $ pod install
 2. 用 Xcode 打开生成的 `ShengwangChatApiExample.xcworkspace` 文件
 3. 在 iOS 设备或模拟器上构建并运行项目
 4. 完成设置！现在您可以体验示例项目并探索声网即时通讯 SDK 的功能了
+5. 如果`pod install`失败报错 
+    > RuntimeError - `PBXGroup` attempted to initialize an object with unknown ISA `PBXFileSystemSynchronizedRootGroup` from attributes: `{"isa"=>"PBXFileSystemSynchronizedRootGroup"`，请尝试升级pod版本为1.14.3
+6. Xcode16及其以下版本打开会报错 `Adjust the project format using a compatible version of Xcode to allow it to be opened by this version of Xcode.`
+7. Build 报错rsync相关权限问题
+    > ⚠️Xcode15编译报错 ```Sandbox: rsync.samba(47334) deny(1) file-write-create...```
+
+    > 解决方法: Build Setting里搜索 ```ENABLE_USER_SCRIPT_SANDBOXING```把```User Script Sandboxing```改为```NO```
+
+### 快速开始
+> 如果低版本Xcode与cocoapods的情况可以使用快速开始集成IMSDK
+
+1. 新建一个工程命名为 `ShengwangChatApiExample`
+
+2. cd到工程文件夹下，执行`pod init`命令，然后在Podfile文件中添加以下代码：
+
+```
+  pod 'ShengwangChat_iOS'
+```
+
+3. 执行`pod install`命令，安装SDK
+
+4. 在`AppDelegate.swift`文件中引入SDK，初始化SDK
+
+```Swift
+//初始化 SDK
+        let options = AgoraChatOptions(appId: <#App ID#>)
+        options.enableConsoleLog = true
+        AgoraChatClient.shared().initializeSDK(with: options)
+```
+
+5. 在`ViewController.swift`文件中引入SDK，使用console中生成的用户以及token登录
+
+```Swift
+        AgoraChatClient.shared().login(withUsername: "userId", token: "user token") { (userId,error) in
+            if error == nil {
+            
+            } else {
+                print("login error:\(error?.errorDescription ?? "")")
+            }
+        }
+```
+
+6. 发送消息
+
+```Swift
+        let message = AgoraChatMessage(conversationID: "receive user id", body: AgoraChatTextMessageBody(text: text), ext: [:])
+        AgoraChatClient.shared().chatManager?.send(message, progress: nil) { [weak self] sendMessage, error in
+            guard let self = self else { return }
+            if error == nil {
+                
+            } else {
+                print("\(error?.errorDescription ?? "")")
+            }
+        }
+```
+
+7. 运行项目，查看日志，发送成功后会在控制台打印发送成功的日志
+
+> 
+[0][2025/01/22 13:59:34:724]: log: level: 0, area: 1, SEND:
+{ verison : MSYNC_V1, compress_algorimth : 0, command : SYNC, encrypt_type : [ 0 ], payload : { meta : { id : 17375255747180004, to : p3, ns : CHAT, payload : { chattype : CHAT, from : p1, to : p3, contents : [ { contenttype : TEXT, text : 666 } ] } } } }
+
+[0][2025/01/22 13:59:34:724]: [Chat TCP] sendBuffer length:56
+[0][2025/01/22 13:59:34:780]: [Chat TCP] OnData length:40
+[0][2025/01/22 13:59:34:780]: log: level: 0, area: 1, RECV:
+{ verison : MSYNC_V1, command : SYNC, payload : { status : { error_code : 0 }, meta_id : 17375255747180004, server_id : 1374221063398884136, timestamp : 1737525574756 } }
+>
+
+8. 发送其他类型消息参看Example源码以及[官网文档](https://im.shengwang.cn/docs/sdk/ios/message_send_receive.html)
 
 ## 反馈
 
@@ -58,8 +130,8 @@ $ pod install
 
 ## 参考
 
-- [Product Overview](https://docs.agora.io/en/agora-chat/agora_chat_get_started_ios?platform=iOS)
-- [API Reference](https://docs.agora.io/en/agora-chat/agora_chat_overview?platform=iOS)
+- [Product Overview](https://im.shengwang.cn/docs/sdk/ios/document_index.html)
+- [API Reference](https://im.shengwang.cn/sdkdocs/chat1.x/ios/)
 
 ## 相关资源
 
