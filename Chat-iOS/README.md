@@ -20,7 +20,7 @@
 
 #### 如何使用自己的 AppID
 
-- 将 `YOUR APP ID` 替换为您的 App ID
+- 将 `APP ID` 替换为您的 App ID
 
 > 查看[启用和配置声网即时通讯服务](https://im.shengwang.cn/docs/sdk/ios/enable_im.html)了解如何启用和配置服务
    
@@ -63,7 +63,7 @@ $ pod install
     > 解决方法: Build Setting里搜索 ```ENABLE_USER_SCRIPT_SANDBOXING```把```User Script Sandboxing```改为```NO```
 
 ### 快速开始
-> 如果低版本Xcode与cocoapods的情况可以使用快速开始集成IMSDK
+> 如果低版本Xcode编译Example工程与cocoapods install报错的情况可以使用快速开始集成IMSDK
 
 1. 新建一个工程命名为 `ShengwangChatApiExample`
 
@@ -130,8 +130,8 @@ $ pod install
 
 ## 参考
 
-- [Product Overview](https://im.shengwang.cn/docs/sdk/ios/document_index.html)
-- [API Reference](https://im.shengwang.cn/sdkdocs/chat1.x/ios/)
+- [产品简介](https://im.shengwang.cn/docs/sdk/ios/document_index.html)
+- [API参考](https://im.shengwang.cn/sdkdocs/chat1.x/ios/)
 
 ## 相关资源
 
@@ -147,4 +147,4 @@ $ pod install
 
 ## License
 
-The sample projects are under the MIT license.
+Example工程遵守MIT开源协议.
