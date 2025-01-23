@@ -45,8 +45,8 @@
 
 ## 参考
 
-- [产品简介](https://im.shengwang.cn/docs/sdk/ios/document_index.html)
-- [API参考](https://im.shengwang.cn/sdkdocs/chat1.x/ios/)
+- [产品简介](https://im.shengwang.cn/docs/sdk/flutter/document_index.html)
+- [API参考](https://im.shengwang.cn/sdkdocs/chat1.x/flutter/)
 
 ## 相关资源
 
