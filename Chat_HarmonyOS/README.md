@@ -44,7 +44,7 @@
 
    在模块的 `module.json5` ，例如：`entry` 模块的 `module.json5` 中，配置示例如下：
 
-   ```json
+   ```
    {
      module: {
        requestPermissions: [
@@ -100,34 +100,34 @@
                })
          }
          .alignItems(HorizontalAlign.Start)
-            .justifyContent(FlexAlign.Start)
-            .margin({
-               left: 20,
-               right: 20
-            })
-            .height('100%')
+         .justifyContent(FlexAlign.Start)
+         .margin({
+            left: 20,
+            right: 20
+         })
+         .height('100%')
       }
       .layoutWeight(1)
-         .width('100%')
+      .width('100%')
 
       Scroll() {
          Text(this.log)
             .width('100%')
       }
       .width('100%')
-         .height(200)
-         .padding(10)
+      .height(200)
+      .padding(10)
 
     }
     .justifyContent(FlexAlign.Start)
-      .width('100%')
-      .height('100%')
+    .width('100%')
+    .height('100%')
    }
 
    @Styles
    commonStyle() {
       .margin({ top: 10 })
-         .width('100%')
+      .width('100%')
    }
    ```
 
