@@ -6,7 +6,7 @@
  * @flow strict-local
  */
 
-// Import depend packages.
+// 导入依赖包。
 import React, {useEffect} from 'react';
 import {
   SafeAreaView,
@@ -23,15 +23,15 @@ import {
   ChatMessage,
 } from 'react-native-shengwang-chat';
 
-// Defines the App object.
+// 定义 App 对象。
 const App = () => {
-  // Defines the variable.
+  // 定义变量。
   const title = 'ShengwangChatQuickstart';
-  // Replaces <your appId> with your app key.
+  // 将 <your appId> 替换为你的 app ID。
   const appId = '<your appId>';
-  // Replaces <your userId> with your user ID.
+  // 将 <your userId> 替换为你的用户 ID。
   const [username, setUsername] = React.useState('<your userId>');
-  // Replaces <your token> with your token.
+  // 将 <your token> 替换为你的声网 token。
   const [chatToken, setChatToken] = React.useState('<your token>');
   const [targetId, setTargetId] = React.useState('');
   const [content, setContent] = React.useState('');
@@ -39,7 +39,7 @@ const App = () => {
   const chatClient = ChatClient.getInstance();
   const chatManager = chatClient.chatManager;
 
-  // Outputs console logs.
+  // 输出控制台日志。
   useEffect(() => {
     logText.split('\n').forEach((value, index, array) => {
       if (index === 0) {
@@ -48,7 +48,7 @@ const App = () => {
     });
   }, [logText]);
 
-  // Outputs UI logs.
+  // 输出 UI 日志。
   const rollLog = text => {
     setWarnText(preLogText => {
       let newLogText = text;
@@ -68,7 +68,7 @@ const App = () => {
   };
 
   useEffect(() => {
-    // Registers listeners for messaging.
+    // 注册消息监听。
     const setMessageListener = () => {
       let msgListener = {
         onMessagesReceived(messages) {
@@ -89,8 +89,8 @@ const App = () => {
       chatManager.addMessageListener(msgListener);
     };
 
-    // Initializes the SDK.
-    // Initializes any interface before calling it.
+    // 初始化 SDK。
+    // 调用接口前先初始化。
     const init = () => {
       let o = ChatOptions.withAppId({
         autoLogin: false,
@@ -130,7 +130,7 @@ const App = () => {
     init();
   }, [chatClient, chatManager, appId]);
 
-  // Logs in with an account ID and a token.
+  // 通过用户 ID 和 Token 登录。
   const login = () => {
     if (this.isInitialized === false || this.isInitialized === undefined) {
       rollLog('Perform initialization first.');
@@ -147,7 +147,7 @@ const App = () => {
       });
   };
 
-  // Logs out from server.
+  // 登出
   const logout = () => {
     if (this.isInitialized === false || this.isInitialized === undefined) {
       rollLog('Perform initialization first.');
@@ -164,7 +164,7 @@ const App = () => {
       });
   };
 
-  // Sends a text message to somebody.
+  // 发送文本消息。
   const sendmsg = () => {
     if (this.isInitialized === false || this.isInitialized === undefined) {
       rollLog('Perform initialization first.');
@@ -197,7 +197,7 @@ const App = () => {
       });
   };
 
-  // Renders the UI.
+  // UI 渲染。
   return (
     <SafeAreaView>
       <View style={styles.titleContainer}>
@@ -269,7 +269,7 @@ const App = () => {
   );
 };
 
-// Sets UI styles.
+// 设置样式
 const styles = StyleSheet.create({
   titleContainer: {
     height: 60,

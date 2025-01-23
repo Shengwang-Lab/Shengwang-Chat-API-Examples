@@ -2,134 +2,143 @@
 
 _[中文](README.zh.md) | English_
 
-## Introduction
+# API Example React-Native
 
-This repository contains example projects using the Agora Chat React-Native sdk.
+_[中文](README.zh.md) | English_
 
-![main](./res/main.jpg)
+# Quick Start
 
-## Create a project
+<Toc />
 
-1. Into console page [agora.io](https://console.agora.io).
-2. Into project management page.
-3. Create a project that name is `quick_start_demo`.
-   ![image](./res/1.png)
-   ![image](./res/2.png)
-   ![image](./res/3.png)
+This document introduces how to integrate the Instant Messaging React-Native SDK in a minimal way to send and receive one-on-one text messages in your app.
 
-## Register a user
+## Implementation Principle
 
-1. Into project configuration page.
-2. Into chat configuration page in features item.
-3. Create user in operation management item.
-   ![image](./res/4.png)
+The following diagram shows the workflow of sending and receiving one-on-one text messages on the client side.
 
-## Generate a user token
+![img](res/sendandreceivemsg.png)
 
-1. Into project configuration page.
-2. Into chat configuration page in features item.
-3. Generate temp token in basic information item.
-   ![image](./res/5.png)
+## Prerequisites
 
-## project structure
+Before integration, please ensure that the development and running environment of the app meets the following requirements:
 
-This project implements multiple functions in a single app.
+- MacOS 12 or higher
+- React-Native 0.66 or higher
+- NodeJs 18 or higher
 
-| Function                                  | Location           |
-| ----------------------------------------- | ------------------ |
-| Send and receive one-to-one text messages | [App.js](./App.js) |
+For iOS applications:
 
-## How to run the sample project
+- Xcode 13 or higher and its related dependency tools.
 
-### Prerequisites
+For Android applications:
 
-#### iOS
+- Android Studio 2021 or higher and its related dependency tools.
 
-- MacOS 10.15.7 or above
-- Xcode 12.4 or above, including command line tools
-- React Native 0.63.4 or later
-- NodeJs 16 or above, including npm package management tool
-- CocoaPods package management tool
-- Yarn compile and run tool
-- Watchman debugging tool
-- A physical or virtual mobile device running iOS 11.0 or later
+If you encounter issues configuring the development or running environment, please refer to the [RN official website](https://reactnative.dev/).
 
-#### Android
+### Other Requirements
 
-- MacOS 10.15.7 or above, Windows 10 or above
-- Android Studio 4.0 or above, including JDK 1.8 or above
-- React Native 0.63.4 or later
-- CocoaPods package management tool if your operating system is Macos.
-- Powershell 5.1 or above installed if your operating system is Windows.
-- NodeJs 16 or above, including npm package management tool
-- Yarn compile and run tool
-- Watchman debugging tool
-- A physical or virtual mobile device running Android 6.0 or later
+A valid Instant Messaging IM developer account and App ID, see [Shengwang Console](https://console.shengwang.cn/overview).
 
-### Running steps
+## Project Setup
 
-Download the code from the repository and go to the `Chat-RN/quick_start_demo` directory.
+Create a React Native project and integrate it
+
+1. Prepare the development environment according to the development system and target platform.
+2. Open the terminal, navigate to the directory where you want to create the project, and enter the command to create a React Native project:
 
 ```sh
-git clone -b main git@github.com:AgoraIO/Agora-Chat-API-Examples.git
-```
-
-Initialize the project
-
-```sh
+npx @react-native-community/cli init --skip-install --version 0.76 quick_start_demo
+cd quick_start_demo
+yarn set version 1.22.19
 yarn
 ```
 
-Execute the pod manually (yarn usually executes it automatically)
+The created project name is `quick_start_demo`.
+
+3. In the terminal command line, enter the following command to add dependencies:
 
 ```sh
-cd ios && pod install
+yarn add react-native-shengwang-chat
 ```
 
-Update the latest SDK package (optional)
+4. Execute scripts on the target platform
+
+Android:
+
+None.
+
+iOS:
 
 ```sh
-yarn upgrade react-native-shengwang-chat
+cd ios && pod install && cd ..
 ```
 
-Compile and run on real iOS device:
+## Register Instant Messaging IM Users
 
-1. Connect the iPhone and set it to developer mode;
-2. Open `quick_start_demo/ios`, use `xcode` to open `quick_start_demo.xcworkspace`;
-3. Click **Targets** > **quick_start_demo** > **Signing & Capabilities** to set the application signature under the signature option;
-4. Click `Build` to build and run the project. After the program is built, it will be automatically installed and run, and the application interface will be displayed.
+#### Create Users
 
-Compile and run on a real Android device:
+Follow the steps below in the [Shengwang Console](https://console.shengwang.cn/overview) to create users:
 
-1. Open `quick_start_demo/android` in Android Studio;
-2. Connect to Android phone, set to developer mode, and set USB adjustable;
-3. Set data forwarding: enter `adb reverse tcp:8081 tcp:8081` in the terminal command line;
-4. Start the service: execute the command in `package.json`: `"start": "react-native start"`, run the command `yarn start` in the terminal:
+1. Expand the dropdown in the upper left corner of the console and select the project that needs to enable Instant Messaging IM services.
 
-   ```sh
-   yarn start
-   ```
+2. Click on **All Products** in the left navigation bar.
 
-5. After the program is built, it will be installed and run automatically, and the application interface will be displayed.
+3. Find **Instant Messaging IM** in the dropdown list and click it.
 
-## Feedback
+4. On the **Instant Messaging IM** page, go to the **Operation Management** tab.
 
-If you have any questions or suggestions, you can give feedback in the form of an issue.
+5. Under the **Users** tab, click **Create IM User**.
 
-## Reference documentation
+6. In the pop-up dialog, configure the user-related parameters and click **Confirm**.
 
-- [Agora Chat SDK Product Overview](https://docs.agora.io/en/agora-chat/agora_chat_get_started_rn?platform=React%20Native)
-- [Agora Chat SDK API Reference](https://docs.agora.io/en/agora-chat/api-ref?platform=React%20Native)
+![img](res/user_create.png)
 
-## related resources
+#### Get User Token
 
-- You can first refer to [FAQ](https://docs.agora.io/cn/faq)
-- If you want to know more official examples, you can refer to [Official SDK Examples](https://github.com/AgoraIO)
-- If you want to understand the application of the AgoraIO SDK in complex scenarios, you can refer to [Official Scenario Case](https://github.com/AgoraIO-usecase)
-- If you want to know the projects maintained by some community developers of Shengwang, you can check [Community](https://github.com/AgoraIO-Community)
-- If you encounter problems and need developer help, you can go to [Developer Community](https://rtcdeveloper.com/) to ask questions
-- If you need after-sales technical support, you can submit a ticket at [Agora Dashboard](https://dashboard.agora.io)
+After creating a user, click **More** in the **Actions** column of the corresponding user in the user list, and select **View Token**.
 
-## Code License
+In the pop-up dialog, you can view the user Token, and you can also click **Regenerate** to generate a new user token.
 
-The example project is under the MIT license.
+![img](res/user_token.png)
+
+## Implement Sending and Receiving One-on-One Messages
+
+It is recommended to open the folder `quick_start_demo` with `visual studio code`, open the file `App.js`, delete all content, and add [the following content](./App.js).
+
+## Compile and Run the Project
+
+Now you can start creating and running the project on the target platform.
+
+Compile and run on iOS devices:
+
+```sh
+yarn run ios
+```
+
+Compile and run on Android devices:
+
+```sh
+yarn run android
+```
+
+Run the local service:
+
+```sh
+yarn run start
+```
+
+## Test Your App
+
+Refer to the following code to test user registration, login, sending, and receiving messages.
+
+1. Enter the username and password on a real device or emulator, and click **Register**.
+2. Click **Login**.
+3. Register and log in a new user on another real device or emulator.
+4. On the first device or emulator, enter the username from the second device, edit the message, and click **Send** to receive the message on the second device.
+
+You can also check the logs below to verify whether registration, login, and message sending were successful.
+
+## More Operations
+
+To ensure security, we recommend using the `username + password + token` method to create users. The token is generated on your app server for the client to obtain. When the token expires, you need to retrieve it again. For more details, see [Using Token Authentication](/sdk/server-side/token_authentication.html).
