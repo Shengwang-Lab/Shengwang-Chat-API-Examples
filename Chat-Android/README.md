@@ -23,7 +23,7 @@
 - 您已[开启和配置即时通讯服务](https://im.shengwang.cn/docs/sdk/android/enable_im.html)。在console上注册用户名并获取token。
 - 真实的 Android 5.1及以上 设备或 Android 虚拟机
 - Android Studio (推荐最新版)
-- JDK (1.8及以上)
+- Java8~Java17
 
 ### 运行步骤
 
