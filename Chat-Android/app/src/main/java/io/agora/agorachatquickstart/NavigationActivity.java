@@ -15,6 +15,7 @@ import androidx.core.content.ContextCompat;
 import androidx.recyclerview.widget.DividerItemDecoration;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
+import io.agora.util.EMLog;
 
 public class NavigationActivity extends AppCompatActivity {
     private static final Integer[] titles = {
@@ -58,7 +59,7 @@ public class NavigationActivity extends AppCompatActivity {
                     Intent intent;
                     // 获取当前选中的标题
                     String selectedTitle = getString(titles[position]);
-                    
+
                     if (selectedTitle.equals(getString(R.string.quick_start))) {
                         // 跳转到 MainActivity
                         intent = new Intent(mContext, MainActivity.class);
@@ -73,7 +74,7 @@ public class NavigationActivity extends AppCompatActivity {
                         startActivity(intent);
                     } else {
                         // 兜底逻辑：未匹配到对应页面
-                        System.out.println("未匹配到对应的页面：" + selectedTitle);
+                        EMLog.d("NavigationActivity","未匹配到对应的页面：" + selectedTitle);
                     }
                 }
             });
