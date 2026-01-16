@@ -3,13 +3,13 @@ plugins {
 }
 
 android {
-    compileSdkVersion 30
-    buildToolsVersion "30.0.3"
+    namespace "io.agora.agorachatquickstart"
+    compileSdkVersion 36
 
     defaultConfig {
         applicationId "io.agora.agorachatquickstart"
         minSdkVersion 21
-        targetSdkVersion 30
+        targetSdkVersion 36
         versionCode 1
         versionName "1.0"
 

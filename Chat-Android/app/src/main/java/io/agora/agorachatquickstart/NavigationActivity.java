@@ -15,6 +15,7 @@ import androidx.core.content.ContextCompat;
 import androidx.recyclerview.widget.DividerItemDecoration;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
+import io.agora.util.EMLog;
 
 public class NavigationActivity extends AppCompatActivity {
     private static final Integer[] titles = {
@@ -56,19 +57,24 @@ public class NavigationActivity extends AppCompatActivity {
                 @Override
                 public void onClick(View v) {
                     Intent intent;
-                    switch (titles[myPosition]) {
-                        case R.string.quick_start :
-                            intent = new Intent(mContext, MainActivity.class);
-                            startActivity(intent);
-                            break;
-                        case R.string.send_audio_message :
-                            intent = new Intent(mContext, SendAudioMessageActivity.class);
-                            startActivity(intent);
-                            break;
-                        case R.string.fetch_messages_from_server :
-                            intent = new Intent(mContext, FetchMessagesFromServerActivity.class);
-                            startActivity(intent);
-                            break;
+                    // 获取当前选中的标题
+                    String selectedTitle = getString(titles[position]);
+
+                    if (selectedTitle.equals(getString(R.string.quick_start))) {
+                        // 跳转到 MainActivity
+                        intent = new Intent(mContext, MainActivity.class);
+                        startActivity(intent);
+                    } else if (selectedTitle.equals(getString(R.string.send_audio_message))) {
+                        // 跳转到 SendAudioMessageActivity
+                        intent = new Intent(mContext, SendAudioMessageActivity.class);
+                        startActivity(intent);
+                    } else if (selectedTitle.equals(getString(R.string.fetch_messages_from_server))) {
+                        // 跳转到 FetchMessagesFromServerActivity
+                        intent = new Intent(mContext, FetchMessagesFromServerActivity.class);
+                        startActivity(intent);
+                    } else {
+                        // 兜底逻辑：未匹配到对应页面
+                        EMLog.d("NavigationActivity","未匹配到对应的页面：" + selectedTitle);
                     }
                 }
             });
